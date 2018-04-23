@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint src",
     "prebuild": "npm run lint",
-    "build": "webpack && rm -rf ../reference-backend/public && cp -R build ../reference-backend/public",
+    "build": "webpack",
     "test": "jest",
     "test:watch": "npm run test -- --watch",
     "start": "webpack-dev-server"

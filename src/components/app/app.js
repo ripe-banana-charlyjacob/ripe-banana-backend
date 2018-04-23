@@ -1,10 +1,10 @@
 import React, { PureComponent, Fragment } from 'react';
 import {
-  Browserrouter as Router,
-  Switch, Route/*, Redirect,
-Link*/ } from 'react-router-dom';
-// import Actors from '../actors/Actors';
-// import ActorDetail from '../actors/ActorDetail';
+  BrowserRouter as Router,
+  Switch, Route, Link } from 'react-router-dom';
+import Actors from '../actors/Actors';
+import ActorDetail from '../actors/ActorDetail';
+import AddActor from '../actors/AddActor';
 
 export default class App extends PureComponent {
   render() {
@@ -14,6 +14,9 @@ export default class App extends PureComponent {
           <main>
             <Switch>
               <Route exact path="/" component={Home}/>
+              <Route exact path="/actors" component={Actors}/>
+              <Route exact path="/actor-detail" component={ActorDetail}/>
+              <Route exact path="/add-actor" component={AddActor}/>
             </Switch>
           </main>
         </div>
@@ -28,6 +31,7 @@ class Home extends PureComponent {
       <Fragment>
         <h2>Home Page</h2>
         <p>placeholder placeholder placeholder</p>
+        <Link to="/add-actor">Add Actors</Link>
       </Fragment>
     );
   }
